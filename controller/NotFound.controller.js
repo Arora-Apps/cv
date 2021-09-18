@@ -1,0 +1,1 @@
+sap.ui.define(["nrarora/cv/controller/BaseController.controller"],function(n){function o(n){return n&&n.__esModule&&typeof n.default!=="undefined"?n.default:n}const e=o(n);const r=e.extend("nrarora.cv.controller.NotFound",{onInit:function n(){}});return r});

@@ -1,0 +1,10 @@
+.headingColor .sapUxAPObjectPageSectionTitle {
+    /* display: none; */
+    color: #5c85d6;
+    font-weight: bold;
+}
+
+.boldHeading .sapUxAPObjectPageSubSectionHeaderTitle {
+    color: #5c85d6;
+    font-weight: bold;
+}

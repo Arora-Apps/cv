@@ -1,0 +1,281 @@
+<mvc:View controllerName="nrarora.cv.controller.Home"
+    displayBlock="true"
+    height="100%"
+    xmlns="sap.uxap"
+    xmlns:m="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core">
+    <m:Page title="{i18n>appTitle}"
+        titleLevel="H3"
+        titleAlignment="Center">
+        <m:headerContent>
+            <m:Button icon="sap-icon://download"
+                press="onPreview"
+                tooltip="{i18n>tooltip.download}"
+                ariaHasPopup="Dialog"/>
+            <m:Avatar src="./images/linkedin.png"
+                displaySize="XS"
+                press="onAvatarClicked"/>
+            <m:Button icon="sap-icon://palette"
+                press=".toggleTheme"
+                tooltip="Toggle theme Dark/Light"/>
+            <m:Button icon="./images/language.png"
+                press=".toggleLanguage"
+                tooltip="Toggle language EN/DE"/>
+        </m:headerContent>
+        <ObjectPageLayout id="ObjectPageLayout"
+            showTitleInHeaderContent="true"
+            upperCaseAnchorBar="false">
+            <!-- preserveHeaderStateOnScroll="true"> -->
+            <headerTitle>
+                <ObjectPageDynamicHeaderTitle>
+                    <expandedHeading>
+                        <m:HBox alignItems="End">
+                            <m:Title text="{path: 'mydata>/pages/name', formatter: '.getI18nValue'}"
+                                wrapping="false"/>
+
+                            <m:GenericTag text="{i18n>experience}"
+                                status="Success"
+                                press="onGenericTagPress"
+                                design="StatusIconHidden"
+                                class="sapUiSmallMarginBegin sapUiTinyMarginBottom">
+                                <m:ObjectNumber id="expValue"
+                                    number="{exp>/exact}"
+                                    unit="yrs"
+                                    emphasized="true"
+                                    state="Success"/>
+                            </m:GenericTag>
+                        </m:HBox>
+                    </expandedHeading>
+
+                    <snappedHeading>
+                        <m:HBox alignItems="Center">
+                            <m:Avatar initials="NA"
+                                class="sapUiSmallMarginEnd"
+                                displaySize="S">
+                                <m:detailBox>
+                                    <m:LightBox>
+                                        <m:LightBoxItem imageSrc="./images/photo.jpg"
+                                            alt="{path: 'mydata>/pages/name', formatter: '.getI18nValue'}"
+                                            title="{path: 'mydata>/pages/name', formatter: '.getI18nValue'}"
+                                            subtitle="{path: 'mydata>/pages/title', formatter: '.getI18nValue'}">
+                                        </m:LightBoxItem>
+                                    </m:LightBox>
+                                </m:detailBox>
+                            </m:Avatar>
+                            <m:VBox>
+                                <m:HBox alignItems="End">
+                                    <m:Title text="{path: 'mydata>/pages/name', formatter: '.getI18nValue'}"/>
+                                    <!-- <m:GenericTag text="Experience" status="Success" press="onGenericTagPress" design="StatusIconHidden" class="sapUiTinyMarginBegin">
+                                                    <m:ObjectNumber id="expValue" number="{exp>/exact}" unit="yrs" emphasized="true" state="Success"/>
+                                                </m:GenericTag> -->
+                                </m:HBox>
+                                <m:Label text="{path: 'mydata>/pages/title', formatter: '.getI18nValue'}"
+                                    wrapping="true"
+                                    class="sapUiTinyMarginTop"/>
+                            </m:VBox>
+                        </m:HBox>
+                    </snappedHeading>
+                    <expandedContent>
+                        <m:Text text="{path: 'mydata>/pages/title', formatter: '.getI18nValue'}"/>
+                    </expandedContent>
+
+                    <snappedTitleOnMobile>
+                        <m:Title text="{path: 'mydata>/pages/name', formatter: '.getI18nValue'}"/>
+                    </snappedTitleOnMobile>
+                    <!-- <content>
+                                    <m:GenericTag text="Experience" status="Success" press="onGenericTagPress" design="StatusIconHidden" class="sapUiTinyMarginBottom">
+                                        <m:ObjectNumber id="expValue" number="{exp>/exact}" unit="yrs" emphasized="true" state="Success"/>
+                                    </m:GenericTag>
+                                </content> -->
+                    <!-- <actions>
+                                    <m:Button id="pdfPreview"
+                                        text = "{i18n>pdfPreview}" type="Emphasized" press="onPreview" ariaHasPopup="Dialog"/>
+                                </actions> -->
+                </ObjectPageDynamicHeaderTitle>
+            </headerTitle>
+            <headerContent>
+                <m:FlexBox wrap="Wrap"
+                    fitContainer="true">
+                    <m:Avatar src="./images/photo.jpg"
+                        initials="NA"
+                        class="sapUiMediumMarginEnd sapUiSmallMarginBottom"
+                        displaySize="XL">
+                        <m:detailBox>
+                            <m:LightBox>
+                                <m:LightBoxItem imageSrc="./images/photo.jpg"
+                                    alt="{path: 'mydata>/pages/name', formatter: '.getI18nValue'}"
+                                    title="{path: 'mydata>/pages/name', formatter: '.getI18nValue'}"
+                                    subtitle="{path: 'mydata>/pages/title', formatter: '.getI18nValue'}">
+                                </m:LightBoxItem>
+                            </m:LightBox>
+                        </m:detailBox>
+                    </m:Avatar>
+                    <m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                        <m:Title text="{i18n>contactInfo}"
+                            class="sapUiTinyMarginBottom" />
+                        <m:HBox class="sapUiTinyMarginBottom">
+                            <core:Icon src="sap-icon://outgoing-call"/>
+                            <m:Link text="{mydata>/pages/mobile}"
+                                class="sapUiSmallMarginBegin"
+                                press="handleTelPress"/>
+                        </m:HBox>
+                        <m:HBox class="sapUiTinyMarginBottom">
+                            <core:Icon src="sap-icon://email"/>
+                            <m:Link text="{mydata>/pages/email}"
+                                class="sapUiSmallMarginBegin"
+                                press="handleEmailPress"/>
+                        </m:HBox>
+                        <m:HBox class="sapUiTinyMarginBottom">
+                            <core:Icon src="sap-icon://internet-browser"/>
+                            <m:Link text="{mydata>/pages/website}"
+                                class="sapUiSmallMarginBegin"
+                                press="handleUrlPress"/>
+                        </m:HBox>
+                    </m:VBox>
+                    <m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                        <m:Title text="{i18n>keySkills}"
+                            class="sapUiTinyMarginBottom"/>
+                        <m:ObjectStatus text="SAP ABAP"
+                            state="Success"
+                            icon="sap-icon://message-success"
+                            class="sapUiTinyMarginBottom"/>
+                        <m:ObjectStatus text="Typescript"
+                            state="Success"
+                            icon="sap-icon://message-success"
+                            class="sapUiTinyMarginBottom"/>
+                        <m:ObjectStatus text="UI5"
+                            state="Success"
+                            icon="sap-icon://message-success"
+                            class="sapUiTinyMarginBottom"/>
+                    </m:VBox>
+                    <m:VBox width="430px"
+                        class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                        <m:Title text="{i18n>objective}"
+                            class="sapUiTinyMarginBottom"/>
+                        <m:Text text="{i18n>careerObj}"/>
+                    </m:VBox>
+                </m:FlexBox>
+            </headerContent>
+            <sections>
+                <ObjectPageSection titleUppercase="false"
+                    id="skillsSection"
+                    title="{i18n>skills}"
+                    titleLevel="H1">
+                    <subSections>
+                        <ObjectPageSubSection id="personal"
+                            title="Personal"
+                            titleUppercase="false">
+                            <m:VBox renderType="List">
+                                <m:Text text="Goal Oriented" />
+                                <m:Text text="Able to perform under pressure"/>
+                                <m:Text text="Capable to learn new technology very fast"/>
+                                <m:Text text="Have strong analytical problem solving abilities"/>
+                                <m:Text text="Strong Team Player with excellent skills to handle a team"/>
+                                <m:Text text="An effective communicator"/>
+                            </m:VBox>
+                        </ObjectPageSubSection>
+                        <ObjectPageSubSection id="technical"
+                            title="Technical"
+                            titleUppercase="false">
+                            <m:VBox renderType="List">
+                                <m:Text text="Goal Oriented"/>
+                                <m:Text text="Able to perform under pressure"/>
+                                <m:Text text="Capable to learn new technology very fast"/>
+                                <m:Text text="Have strong analytical problem solving abilities"/>
+                                <m:Text text="Strong Team Player with excellent skills to handle a team"/>
+                                <m:Text text="An effective communicator"/>
+                            </m:VBox>
+                        </ObjectPageSubSection>
+                        <ObjectPageSubSection id="functional"
+                            title="Functional"
+                            titleUppercase="false">
+                            <m:VBox renderType="List">
+                                <m:Text text="Goal Oriented"/>
+                                <m:Text text="Able to perform under pressure"/>
+                                <m:Text text="Capable to learn new technology very fast"/>
+                                <m:Text text="Have strong analytical problem solving abilities"/>
+                                <m:Text text="Strong Team Player with excellent skills to handle a team"/>
+                                <m:Text text="An effective communicator"/>
+                            </m:VBox>
+                        </ObjectPageSubSection>
+                    </subSections>
+                </ObjectPageSection>
+                <ObjectPageSection titleUppercase="false"
+                    id="experienceSection"
+                    title="{i18n>experience}"
+                    titleLevel="H1">
+                    <subSections>
+                        <ObjectPageSubSection id="sap"
+                            title="SAP Labs"
+                            titleUppercase="false">
+                            <m:VBox renderType="List">
+                                <m:Text text="Goal Oriented"/>
+                                <m:Text text="Able to perform under pressure"/>
+                                <m:Text text="Capable to learn new technology very fast"/>
+                                <m:Text text="Have strong analytical problem solving abilities"/>
+                                <m:Text text="Strong Team Player with excellent skills to handle a team"/>
+                                <m:Text text="An effective communicator"/>
+                            </m:VBox>
+                        </ObjectPageSubSection>
+                        <ObjectPageSubSection id="acn"
+                            title="Accenture"
+                            titleUppercase="false">
+                            <m:VBox renderType="List">
+                                <m:Text text="Goal Oriented"/>
+                                <m:Text text="Able to perform under pressure"/>
+                                <m:Text text="Capable to learn new technology very fast"/>
+                                <m:Text text="Have strong analytical problem solving abilities"/>
+                                <m:Text text="Strong Team Player with excellent skills to handle a team"/>
+                                <m:Text text="An effective communicator"/>
+                            </m:VBox>
+                        </ObjectPageSubSection>
+                    </subSections>
+                </ObjectPageSection>
+                <ObjectPageSection titleUppercase="false"
+                    id="currentStatus"
+                    title="{i18n>cStatus}"
+                    titleLevel="H1">
+                    <subSections>
+                        <ObjectPageSubSection id="company"
+                            title="Company"
+                            titleUppercase="false">
+                            <m:VBox renderType="List">
+                                <m:Text text="Goal Oriented"/>
+                                <m:Text text="Able to perform under pressure"/>
+                                <m:Text text="Capable to learn new technology very fast"/>
+                                <m:Text text="Have strong analytical problem solving abilities"/>
+                                <m:Text text="Strong Team Player with excellent skills to handle a team"/>
+                                <m:Text text="An effective communicator"/>
+                            </m:VBox>
+                        </ObjectPageSubSection>
+                        <ObjectPageSubSection id="work"
+                            title="Work"
+                            titleUppercase="false">
+                            <m:VBox renderType="List">
+                                <m:Text text="Goal Oriented"/>
+                                <m:Text text="Able to perform under pressure"/>
+                                <m:Text text="Capable to learn new technology very fast"/>
+                                <m:Text text="Have strong analytical problem solving abilities"/>
+                                <m:Text text="Strong Team Player with excellent skills to handle a team"/>
+                                <m:Text text="An effective communicator"/>
+                            </m:VBox>
+                        </ObjectPageSubSection>
+                        <ObjectPageSubSection id="location"
+                            title="Location"
+                            titleUppercase="false">
+                            <m:VBox renderType="List">
+                                <m:Text text="Goal Oriented"/>
+                                <m:Text text="Able to perform under pressure"/>
+                                <m:Text text="Capable to learn new technology very fast"/>
+                                <m:Text text="Have strong analytical problem solving abilities"/>
+                                <m:Text text="Strong Team Player with excellent skills to handle a team"/>
+                                <m:Text text="An effective communicator"/>
+                            </m:VBox>
+                        </ObjectPageSubSection>
+                    </subSections>
+                </ObjectPageSection>
+            </sections>
+        </ObjectPageLayout>
+    </m:Page>
+</mvc:View>

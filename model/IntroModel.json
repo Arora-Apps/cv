@@ -1,0 +1,49 @@
+{
+    "pages": [
+        {
+            "pageId": "employeePageId",
+            "header": "Experience Summary",
+            "icon": "images/photo.jpg",
+            "title": "Nishant Arora",
+            "description": "Developer",
+            "groups": [
+                {
+                    "heading": "Contact Details",
+                    "elements": [
+                        {
+                            "label": "mobile",
+                            "value": "+001 6101 34869-0",
+                            "elementType": "mobile"
+                        },
+                        {
+                            "label": "phone",
+                            "value": "+001 6101 34869-1",
+                            "elementType": "phone"
+                        },
+                        {
+                            "label": "email",
+                            "value": "main.contact@company.com",
+                            "emailSubject": "Subject",
+                            "elementType": "email"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Company",
+                    "elements": [
+                        {
+                            "label": "name",
+                            "value": "Adventure Company",
+                            "url": "http://sap.com",
+                            "elementType": "link"
+                        },
+                        {
+                            "label": "address",
+                            "value": "Main Street 4572, Los Angeles USA"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

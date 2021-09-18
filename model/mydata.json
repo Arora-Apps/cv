@@ -1,0 +1,30 @@
+{
+    "pages": {
+        "name": "name",
+        "title": "subheading",
+        "email": "n.r.arora@gmail.com",
+        "mobile": "+91 74118 19579",
+        "website": "https://www.sap.com",
+        "linkedin": "https://www.linkedin.com/in/nishant-arora-75a4653b",
+        "keyskills": "SAP ABAP, TypeScript, UI5, Javascript",
+        "skills": {
+            "personal": [
+                "sp1",
+                "sp2",
+                "sp3"
+            ],
+            "technical": [
+                "st1",
+                "st2"
+            ],
+            "functional": [
+                "sf1",
+                "sf2"
+            ]
+        },
+        "experience": {
+            "sap": "saptext",
+            "acn": "acntext"
+        }
+    }
+}
